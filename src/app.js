@@ -1,6 +1,7 @@
 import React from "react";
 
 function App({ url }) {
+  console.log(url);
   const ws = React.useRef(null);
 
   const [listMessage, setListMessage] = React.useState([]);
