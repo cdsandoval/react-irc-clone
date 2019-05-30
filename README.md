@@ -4,6 +4,12 @@ Create a multi channel chat application using the WebSocket server in [codeableo
 
 ## Team Members
 
+- Diego Torres
+- Lian Nivin
+- Christopher Roa
+- Carlos Sandoval
+- Ricardo Yrupailla
+
 ## Requirements
 
 - [ ] The user should be asked for a username when trying to access.
