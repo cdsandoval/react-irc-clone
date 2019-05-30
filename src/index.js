@@ -1,9 +1,8 @@
+// index.js
 import React from "react";
 import { render } from "react-dom";
 
-function Codeable() {
-  return <h1>Codeable</h1>;
-}
+import App from "./app";
 
 const $root = document.getElementById("root");
-render(<Codeable />, $root);
+render(<App url="ws://localhost:8000" />, $root);
