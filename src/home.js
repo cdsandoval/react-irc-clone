@@ -70,7 +70,14 @@ function Home({ url }) {
           }
 
           body {
+            height: 100vh;
             margin: 0;
+            overflow: hidden;
+            font-family: "jaldiregular";
+            font-size: 18px;
+            line-height: 1.2;
+            background-color: #f5f5f5;
+            margin: 0
           }
 
           ul {
@@ -97,17 +104,7 @@ function Home({ url }) {
           select:focus,
           input:focus {
             outline: 0;
-          }
-
-          body {
-            height: 100vh;
-            margin: 0;
-            overflow: hidden;
-            font-family: "jaldiregular";
-            font-size: 18px;
-            line-height: 1.2;
-            background-color: #f5f5f5;
-          }
+          }     
 
           ::selection {
             background-color: #34332f;
@@ -116,6 +113,16 @@ function Home({ url }) {
 
           a {
             color: #4e72cd;
+          }
+
+          input[type="text"] {
+            border: 3px solid #34332F;
+            box-sizing: border-box;
+            border-radius: 0.5em;
+            height: 2.8em;
+            padding: 0 1em;
+            width: 100%;
+            font-size: 1rem;
           }
         `}
       />
