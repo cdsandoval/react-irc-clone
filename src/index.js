@@ -1,4 +1,5 @@
 /** @jsx jsx */
+// eslint-disable-next-line
 import React from "react";
 import { render } from "react-dom";
 import { jsx } from "@emotion/core";
