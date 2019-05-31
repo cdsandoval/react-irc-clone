@@ -4,6 +4,7 @@ import JaldiRegularWoff2 from "./assets/fonts/jaldi-regular-webfont.woff2";
 import JaldiRegularWoff from "./assets/fonts/jaldi-regular-webfont.woff";
 import JaldiBoldWoff2 from "./assets/fonts/jaldi-bold-webfont.woff2";
 import JaldiBoldWoff from "./assets/fonts/jaldi-bold-webfont.woff";
+import cssVar from "./assets/css/variables";
 
 function Home({ url }) {
   const ws = React.useRef(null);
@@ -73,10 +74,10 @@ function Home({ url }) {
             height: 100vh;
             margin: 0;
             overflow: hidden;
-            font-family: "jaldiregular";
+            font-family: ${cssVar.ffRegular};
             font-size: 18px;
             line-height: 1.2;
-            background-color: #f5f5f5;
+            background-color: ${cssVar.gray};
             margin: 0
           }
 
@@ -96,7 +97,7 @@ function Home({ url }) {
           h4,
           h5,
           h6 {
-            font-size: 1em;
+            font-size: ${cssVar.ffRegular};
             margin: 0;
             font-weight: normal;
           }
@@ -107,22 +108,22 @@ function Home({ url }) {
           }     
 
           ::selection {
-            background-color: #34332f;
+            background-color: ${cssVar.black};
             color: white;
           }
 
           a {
-            color: #4e72cd;
+            color: ${cssVar.link};
           }
 
           input[type="text"] {
-            border: 3px solid #34332F;
+            border: 3px solid ${cssVar.black};
             box-sizing: border-box;
             border-radius: 0.5em;
             height: 2.8em;
             padding: 0 1em;
             width: 100%;
-            font-size: 1rem;
+            font-size: ${cssVar.ffRegular};
           }
         `}
       />
