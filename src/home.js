@@ -1,6 +1,6 @@
 import React from "react";
 
-function App({ url }) {
+function Home({ url }) {
   console.log(url);
   const ws = React.useRef(null);
 
@@ -46,7 +46,7 @@ function App({ url }) {
 
   return (
     <>
-      <h1>App</h1>
+      <h1>Home</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="message">Message</label>
         <input
@@ -68,4 +68,4 @@ function App({ url }) {
   );
 }
 
-export default App;
+export default Home;

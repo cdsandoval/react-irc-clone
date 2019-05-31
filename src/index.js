@@ -1,8 +1,7 @@
-// index.js
 import React from "react";
 import { render } from "react-dom";
 
-import App from "./app";
+import Home from "./home";
 
 const $root = document.getElementById("root");
-render(<App url="ws://localhost:4000" />, $root);
+render(<Home url="ws://localhost:4000" />, $root);
