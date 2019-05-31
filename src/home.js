@@ -1,11 +1,7 @@
 import React from "react";
-<<<<<<< HEAD
-import Tabs from "./components/tabs";
-=======
 import { Global, css } from "@emotion/core";
 import Tabs from "./components/tab/tabs";
 import base from "./assets/css/base";
->>>>>>> ebee5a52435561276a669fc34ab3944493562769
 
 function Home({ url }) {
   const ws = React.useRef(null);
