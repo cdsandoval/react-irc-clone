@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Global, css } from "@emotion/core";
+import { css } from "@emotion/core";
 
 const tabsCss = css`
   & {
