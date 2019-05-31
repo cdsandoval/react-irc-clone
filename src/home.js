@@ -1,4 +1,5 @@
 import React from "react";
+import Tabs from "./components/tabs";
 
 function Home({ url }) {
   console.log(url);
@@ -138,10 +139,7 @@ function Home({ url }) {
               </p>
             </footer>
           </sections>
-
-          <sections className="tabs">
-            <ul id="list-user-channels" className="list" />
-          </sections>
+          <Tabs />
           <sections id="js-messages-list" className="chat padding24">
             <ul id="js-messages-view" className="list-messages" />
             <form className="send-message">
