@@ -1,11 +1,12 @@
-import React from "react";
+import React from 'react';
+import Listchannels from './components/list-channels';
 
 function Home({ url }) {
   console.log(url);
   const ws = React.useRef(null);
 
   const [listMessage, setListMessage] = React.useState([]);
-  const [content, setContent] = React.useState("");
+  const [content, setContent] = React.useState('');
   const [connected, setConnected] = React.useState(false);
 
   React.useEffect(() => {
@@ -20,11 +21,11 @@ function Home({ url }) {
   React.useEffect(() => {
     if (ws.current) {
       ws.current.onopen = () => {
-        console.log("open");
+        console.log('open');
         setConnected(true);
       };
       ws.current.onclose = () => {
-        console.log("close");
+        console.log('close');
         setConnected(false);
       };
       ws.current.onmessage = ({ data }) => {
@@ -41,7 +42,7 @@ function Home({ url }) {
         content
       })
     );
-    setContent("");
+    setContent('');
   }
 
   return (
@@ -105,7 +106,8 @@ function Home({ url }) {
               N
             </button>
           </header>
-          <sections id="channel-list" className="channels padding16 relative">
+          <Listchannels />
+          {/* <sections id="channel-list" className="channels padding16 relative">
             <div className="list-channels">
               <div id="js-close-channels" className="button-icon close">
                 <svg width="16" height="16" viewBox="0 0 348.333 348.334">
@@ -137,7 +139,7 @@ function Home({ url }) {
                 <a href="#">@yummta</a>
               </p>
             </footer>
-          </sections>
+          </sections> */}
 
           <sections className="tabs">
             <ul id="list-user-channels" className="list" />
