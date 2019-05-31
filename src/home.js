@@ -1,8 +1,13 @@
 import React from "react";
+<<<<<<< HEAD
 import Tabs from "./components/tabs";
+=======
+import { Global, css } from "@emotion/core";
+import Tabs from "./components/tab/tabs";
+import base from "./assets/css/base";
+>>>>>>> ebee5a52435561276a669fc34ab3944493562769
 
 function Home({ url }) {
-  console.log(url);
   const ws = React.useRef(null);
 
   const [listMessage, setListMessage] = React.useState([]);
@@ -46,27 +51,14 @@ function Home({ url }) {
   }
 
   return (
-    // <>
-    //   <h1>Home</h1>
-    //   <form onSubmit={handleSubmit}>
-    //     <label htmlFor="message">Message</label>
-    //     <input
-    //       type="text"
-    //       name="message"
-    //       id="message"
-    //       disabled={!connected}
-    //       value={content}
-    //       onChange={event => setContent(event.target.value)}
-    //     />
-    //     <button>Send</button>
-    //   </form>
-    //   <ul>
-    //     {listMessage.map(message => (
-    //       <li key={message.id}>{message.content}</li>
-    //     ))}
-    //   </ul>
-
     <>
+      <Global styles={base} />
+
+      <ul>
+        {listMessage.map(message => (
+          <li key={message.id}>{message.content}</li>
+        ))}
+      </ul>
       <div className="center">
         <div className="wrapper-app window main-grid">
           <header id="user-header" className="header center window-dots">
@@ -174,7 +166,7 @@ function Home({ url }) {
                 placeholder="Name channel"
               />
               <div className="actions">
-                <button id="js-button-create-channel" className="button -dark">
+                <button id="js-button-create-channel" className="button-dark">
                   Create Channel
                 </button>
                 <button id="js-close-lb" className="button cancel">
