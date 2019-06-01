@@ -1,8 +1,5 @@
-/** @jsx jsx */
 import React from "react";
-import { Global, css, jsx } from "@emotion/core";
 import { render } from "react-dom";
-
 import Home from "./home";
 
 const $root = document.getElementById("root");

@@ -78,6 +78,60 @@ input[type="text"] {
   width: 100%;
   font-size: ${cssVar.ffRegular};
 }
+
+// headings
+
+.heading-1{
+  font-family: ${cssVar.ffBold};
+  font-size: ${cssVar.fsBigger};
+  margin-bottom: 0.5em;
+}
+
+.heading-2{
+  font-family: ${cssVar.ffBold};
+  font-size: ${cssVar.fsBig};
+  margin-bottom: 0.5em;
+}
+.heading-3{
+  font-size: ${cssVar.fsRegular};
+  font-family: ${cssVar.ffBold};
+  margin-bottom: 0.5em;
+}
+
+/* Helpers */
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.none{
+  display: none;
+}
+
+.relative {
+  position: relative;
+}
+
+/* security-space */
+.padding16{
+  padding: 16px
+}
+.padding24{
+  padding: 24px
+}
+.padding48{
+  padding: 48px
+}
+
+@media screen and (max-width:480px) {
+  .padding48{
+    padding: 24px;
+  }
+  .padding24{
+    padding: 16px;
+  }
+}
 `;
 
 export default base;
