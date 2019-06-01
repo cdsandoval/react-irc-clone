@@ -1,8 +1,6 @@
 /** @jsx jsx */
 import React from "react";
-import { Global } from "@emotion/core";
-import { jsx } from "@emotion/core";
-
+import { Global, jsx } from "@emotion/core";
 import loginBaseCss from "./assets/css/login-base-css";
 import loginCss from "./assets/css/login-css";
 

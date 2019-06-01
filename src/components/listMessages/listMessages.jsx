@@ -48,14 +48,15 @@ function ListMessages({ message }) {
         }}
       >
         {message.map(value => {
+          let date = new Date(value.date);
           return (
             <>
-              {value.date.getDate() !== day ? showSeparator(value.date) : null}
+              {date.getDate() !== day ? showSeparator(date) : null}
               <li
                 key={value.key}
                 css={{ marginBottom: "4px", opacity: "0.55" }}
               >
-                [{formatAMPM(value.date)}]
+                [{formatAMPM(date)}]
                 <span
                   css={{
                     backgroundColor: "#D9EFFF",
