@@ -1,6 +1,7 @@
 import React from "react";
 import { Global } from "@emotion/core";
 import Tabs from "./components/tab/tabs";
+import SendMessage from "./components/sendMessage/sendMessage";
 import base from "./assets/css/base";
 import layout from "./assets/css/layout";
 
