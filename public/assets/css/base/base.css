@@ -10,9 +10,9 @@ body {
 
 ::selection {
   background-color: var(--c-black);
-  color: #f7d9d5;
+  color: white;
 }
 
-a {
-  color: var(--c-link);
+a{
+  color: var(--c-link)
 }
