@@ -140,6 +140,7 @@ function Home({ url }) {
           <Tabs />
           <section id="js-messages-list" className="chat padding24">
             <ListMessages message={listMessage} />
+
             <form className="send-message">
               <input
                 type="text"
