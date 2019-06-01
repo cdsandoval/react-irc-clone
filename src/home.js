@@ -115,7 +115,7 @@ function Home({ url }) {
               N
             </button>
           </header>
-          <section id="channel-list" className="channels padding16 relative">
+          <sections id="channel-list" className="channels padding16 relative">
             <div className="list-channels">
               <div id="js-close-channels" className="button-icon close">
                 <svg width="16" height="16" viewBox="0 0 348.333 348.334">
@@ -136,10 +136,21 @@ function Home({ url }) {
                 New channel
               </span>
             </div>
-          </section>
+
+            <footer className="footer">
+              <p>
+                With love by
+                <a href="#">@lian</a>
+                <a href="#">@cristian</a>
+                <a href="#">@mayra</a>
+                <a href="#">@carlos</a>
+                <a href="#">@yummta</a>
+              </p>
+            </footer>
+          </sections>
           <Tabs />
-          <section id="js-messages-list" className="chat padding24">
-            <ListMessages message={message} />
+          <sections id="js-messages-list" className="chat padding24">
+            <ul id="js-messages-view" className="list-messages" />
             <form className="send-message">
               <input
                 type="text"
@@ -147,19 +158,19 @@ function Home({ url }) {
                 aria-label="Chat here"
                 className="input-text"
                 placeholder="Chat here..."
-                autoComplete="off"
-                autoFocus
+                autocomplete="off"
+                autofocus
               />
               <button id="js-add-user-message" className="button -dark submit">
                 Send
               </button>
             </form>
-          </section>
+          </sections>
         </div>
         <div id="js-light-box" className="light-box">
           <form action="createChannel" className="window form-new-channel">
             <label
-              // for="channels"
+              for="channels"
               className="heading-2 center title window-dots"
             >
               Create a new Channel

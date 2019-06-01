@@ -78,6 +78,7 @@ input[type="text"] {
   width: 100%;
   font-size: ${cssVar.ffRegular};
 }
+<<<<<<< HEAD
 
 // headings
 
@@ -132,6 +133,8 @@ input[type="text"] {
     padding: 16px;
   }
 }
+=======
+>>>>>>> bf83ea7683058da58256952a3cd015812c39355c
 `;
 
 export default base;
