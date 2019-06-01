@@ -1,8 +1,10 @@
 import React from 'react';
-import Listchannels from './components/list-channels';
+import { Global, css } from '@emotion/core';
+import Tabs from './components/tab/tabs';
+import Listchannels from './components/list-channels/list-channels';
+import base from './assets/css/base';
 
 function Home({ url }) {
-  console.log(url);
   const ws = React.useRef(null);
 
   const [listMessage, setListMessage] = React.useState([]);
@@ -46,27 +48,14 @@ function Home({ url }) {
   }
 
   return (
-    // <>
-    //   <h1>Home</h1>
-    //   <form onSubmit={handleSubmit}>
-    //     <label htmlFor="message">Message</label>
-    //     <input
-    //       type="text"
-    //       name="message"
-    //       id="message"
-    //       disabled={!connected}
-    //       value={content}
-    //       onChange={event => setContent(event.target.value)}
-    //     />
-    //     <button>Send</button>
-    //   </form>
-    //   <ul>
-    //     {listMessage.map(message => (
-    //       <li key={message.id}>{message.content}</li>
-    //     ))}
-    //   </ul>
-
     <>
+      <Global styles={base} />
+
+      <ul>
+        {listMessage.map(message => (
+          <li key={message.id}>{message.content}</li>
+        ))}
+      </ul>
       <div className="center">
         <div className="wrapper-app window main-grid">
           <header id="user-header" className="header center window-dots">
@@ -107,43 +96,7 @@ function Home({ url }) {
             </button>
           </header>
           <Listchannels />
-          {/* <sections id="channel-list" className="channels padding16 relative">
-            <div className="list-channels">
-              <div id="js-close-channels" className="button-icon close">
-                <svg width="16" height="16" viewBox="0 0 348.333 348.334">
-                  <path
-                    d="M336.559,68.611L231.016,174.165l105.543,105.549c15.699,15.705,15.699,41.145,0,56.85
-                c-7.844,7.844-18.128,11.769-28.407,11.769c-10.296,0-20.581-3.919-28.419-11.769L174.167,231.003L68.609,336.563
-                c-7.843,7.844-18.128,11.769-28.416,11.769c-10.285,0-20.563-3.919-28.413-11.769c-15.699-15.698-15.699-41.139,0-56.85
-                l105.54-105.549L11.774,68.611c-15.699-15.699-15.699-41.145,0-56.844c15.696-15.687,41.127-15.687,56.829,0l105.563,105.554
-                L279.721,11.767c15.705-15.687,41.139-15.687,56.832,0C352.258,27.466,352.258,52.912,336.559,68.611z"
-                  />
-                </svg>
-              </div>
-
-              <div id="js-open-menu" className="hamburguer" />
-              <h3 className="heading-2 title">Channels</h3>
-              <ul id="irc-channels" />
-              <span id="js-open-lb" className="button -dark new-channel">
-                New channel
-              </span>
-            </div>
-
-            <footer className="footer">
-              <p>
-                With love by
-                <a href="#">@lian</a>
-                <a href="#">@cristian</a>
-                <a href="#">@mayra</a>
-                <a href="#">@carlos</a>
-                <a href="#">@yummta</a>
-              </p>
-            </footer>
-          </sections> */}
-
-          <sections className="tabs">
-            <ul id="list-user-channels" className="list" />
-          </sections>
+          <Tabs />
           <sections id="js-messages-list" className="chat padding24">
             <ul id="js-messages-view" className="list-messages" />
             <form className="send-message">
@@ -178,7 +131,7 @@ function Home({ url }) {
                 placeholder="Name channel"
               />
               <div className="actions">
-                <button id="js-button-create-channel" className="button -dark">
+                <button id="js-button-create-channel" className="button-dark">
                   Create Channel
                 </button>
                 <button id="js-close-lb" className="button cancel">

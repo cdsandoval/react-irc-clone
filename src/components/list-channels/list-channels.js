@@ -41,11 +41,11 @@ function Listchannels() {
       <footer className="footer">
         <p>
           With love by
-          <a href="#">@lian</a>
-          <a href="#">@cristian</a>
-          <a href="#">@mayra</a>
-          <a href="#">@carlos</a>
-          <a href="#">@yummta</a>
+          <a href="#">@DeadLian</a>
+          <a href="#">@Christopher</a>
+          <a href="#">@Carlos</a>
+          <a href="#">@Diego</a>
+          <a href="#">@Ricardo</a>
         </p>
       </footer>
     </sections>
