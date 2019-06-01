@@ -1,6 +1,7 @@
 import React from "react";
 import { Global, css } from "@emotion/core";
 import Tabs from "./components/tab/tabs";
+import SendMessage from "./components/sendMessage/sendMessage";
 import base from "./assets/css/base";
 
 function Home({ url }) {
@@ -130,20 +131,7 @@ function Home({ url }) {
           <Tabs />
           <sections id="js-messages-list" className="chat padding24">
             <ul id="js-messages-view" className="list-messages" />
-            <form className="send-message">
-              <input
-                type="text"
-                id="js-input-user-message"
-                aria-label="Chat here"
-                className="input-text"
-                placeholder="Chat here..."
-                autocomplete="off"
-                autofocus
-              />
-              <button id="js-add-user-message" className="button -dark submit">
-                Send
-              </button>
-            </form>
+            <SendMessage />
           </sections>
         </div>
         <div id="js-light-box" className="light-box">
