@@ -48,14 +48,25 @@ function ListMessages({ message }) {
         }}
       >
         {message.map(value => {
+<<<<<<< HEAD
           return (
             <>
               {value.date.getDate() !== day ? showSeparator(value.date) : null}
+=======
+          let date = new Date(value.date);
+          return (
+            <>
+              {date.getDate() !== day ? showSeparator(date) : null}
+>>>>>>> f2c290c5d2b956d68d7609893f22e2571d4b084a
               <li
                 key={value.key}
                 css={{ marginBottom: "4px", opacity: "0.55" }}
               >
+<<<<<<< HEAD
                 [{formatAMPM(value.date)}]
+=======
+                [{formatAMPM(date)}]
+>>>>>>> f2c290c5d2b956d68d7609893f22e2571d4b084a
                 <span
                   css={{
                     backgroundColor: "#D9EFFF",
