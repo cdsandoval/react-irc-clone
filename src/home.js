@@ -1,8 +1,19 @@
 import React from 'react';
-import { Global, css } from '@emotion/core';
+import { Global } from '@emotion/core';
 import Tabs from './components/tab/tabs';
+import SendMessage from './components/sendMessage/sendMessage';
 import Listchannels from './components/list-channels/list-channels';
 import base from './assets/css/base';
+import layout from './assets/css/layout';
+
+import button from './assets/css/components/buttons';
+import inputs from './assets/css/components/inputs';
+import window from './assets/css/components/window';
+import lightBox from './assets/css/components/light-box';
+import separator from './assets/css/components/separator';
+import home from './assets/css/pages/home';
+import ListMessages from './components/listMessages/listMessages';
+import message from './components/listMessages/helpers/testData.jsx'; // Test Data to Messages
 
 function Home({ url }) {
   const ws = React.useRef(null);
@@ -50,6 +61,16 @@ function Home({ url }) {
   return (
     <>
       <Global styles={base} />
+      <Global styles={layout} />
+
+      <Global styles={button} />
+      <Global styles={inputs} />
+      <Global styles={window} />
+      <Global styles={lightBox} />
+      <Global styles={message} />
+      <Global styles={separator} />
+
+      <Global styles={home} />
 
       <ul>
         {listMessage.map(message => (
@@ -97,28 +118,15 @@ function Home({ url }) {
           </header>
           <Listchannels />
           <Tabs />
-          <sections id="js-messages-list" className="chat padding24">
-            <ul id="js-messages-view" className="list-messages" />
-            <form className="send-message">
-              <input
-                type="text"
-                id="js-input-user-message"
-                aria-label="Chat here"
-                className="input-text"
-                placeholder="Chat here..."
-                autocomplete="off"
-                autofocus
-              />
-              <button id="js-add-user-message" className="button -dark submit">
-                Send
-              </button>
-            </form>
-          </sections>
+          <section id="js-messages-list" className="chat padding24">
+            <ListMessages message={message} />
+            <SendMessage />
+          </section>
         </div>
         <div id="js-light-box" className="light-box">
           <form action="createChannel" className="window form-new-channel">
             <label
-              for="channels"
+              // for="channels"
               className="heading-2 center title window-dots"
             >
               Create a new Channel
