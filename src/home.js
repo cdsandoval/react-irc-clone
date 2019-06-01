@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Global } from "@emotion/core";
 import Tabs from "./components/tab/tabs";
@@ -18,7 +19,7 @@ function Home({ url }) {
   const ws = React.useRef(null);
 
   const [listMessage, setListMessage] = React.useState([]);
-  const [content, setContent] = React.useState("");
+  const [content, setContent] = React.useState('');
   const [connected, setConnected] = React.useState(false);
 
   function addMessage(event) {
@@ -41,11 +42,11 @@ function Home({ url }) {
   React.useEffect(() => {
     if (ws.current) {
       ws.current.onopen = () => {
-        console.log("open");
+        console.log('open');
         setConnected(true);
       };
       ws.current.onclose = () => {
-        console.log("close");
+        console.log('close');
         setConnected(false);
       };
       ws.current.onmessage = ({ data }) => {
@@ -62,7 +63,7 @@ function Home({ url }) {
         content
       })
     );
-    setContent("");
+    setContent('');
   }
 
   return (
@@ -76,6 +77,13 @@ function Home({ url }) {
       <Global styles={message} />
       <Global styles={separator} />
       <Global styles={home} />
+
+      <ul>
+        {listMessage.map(message => (
+          <li key={message.id}>{message.content}</li>
+        ))}
+      </ul>
+
       <div className="center">
         <div className="wrapper-app window main-grid">
           <header id="user-header" className="header center window-dots">
@@ -115,6 +123,11 @@ function Home({ url }) {
               N
             </button>
           </header>
+          <Listchannels />
+          <Tabs />
+          <section id="js-messages-list" className="chat padding24">
+            <ListMessages message={message} />
+            <SendMessage />
           <section id="channel-list" className="channels padding16 relative">
             <div className="list-channels">
               <div id="js-close-channels" className="button-icon close">
