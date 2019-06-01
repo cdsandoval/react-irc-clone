@@ -2,6 +2,14 @@ import React from "react";
 import { Global } from "@emotion/core";
 import Tabs from "./components/tab/tabs";
 import base from "./assets/css/base";
+import layout from "./assets/css/layout";
+
+import button from "./assets/css/components/buttons";
+import inputs from "./assets/css/components/inputs";
+import window from "./assets/css/components/window";
+import lightBox from "./assets/css/components/light-box";
+import separator from "./assets/css/components/separator";
+import home from "./assets/css/pages/home";
 import ListMessages from "./components/listMessages/listMessages";
 import message from "./components/listMessages/helpers/testData.jsx"; // Test Data to Messages
 
@@ -51,6 +59,16 @@ function Home({ url }) {
   return (
     <>
       <Global styles={base} />
+      <Global styles={layout} />
+
+      <Global styles={button} />
+      <Global styles={inputs} />
+      <Global styles={window} />
+      <Global styles={lightBox} />
+      <Global styles={message} />
+      <Global styles={separator} />
+
+      <Global styles={home} />
 
       <ul>
         {listMessage.map(message => (
