@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { css } from "@emotion/core";
+import cssVar from "../../assets/css/variables";
 
 const tabsCss = css`
   & {
@@ -13,12 +14,12 @@ const tabsCss = css`
     padding: 0 16px;
     padding-left: 19px;
     box-sizing: border-box;
-    border-bottom: 3px solid var(--c-black);
+    border-bottom: 3px solid ${cssVar.black};
   }
 
   & .item {
     border-radius: 8px 8px 0 0;
-    border: 3px solid var(--c-black);
+    border: 3px solid ${cssVar.black};
     border-bottom: 0;
     margin-left: -3px;
     padding: 0.4em 0.7em;
@@ -28,11 +29,11 @@ const tabsCss = css`
   }
 
   & .item:hover {
-    background-color: var(--c-green);
+    background-color: ${cssVar.green};
   }
 
   & .item.-active {
-    font-family: var(--ff-bold);
+    font-family: ${cssVar.ffBold};
   }
 
   & .item.-active:after {
@@ -42,7 +43,7 @@ const tabsCss = css`
     left: 0;
     right: 0;
     position: absolute;
-    background-color: var(--c-background);
+    background-color: ${cssVar.background};
   }
 
   & .item.-active:hover {
@@ -60,7 +61,7 @@ const tabsCss = css`
     }
     50%,
     100% {
-      background-color: var(--c-red);
+      background-color: ${cssVar.red};
     }
   }
 
