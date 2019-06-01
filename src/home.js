@@ -20,14 +20,23 @@ function Home({ url }) {
   const [listMessage, setListMessage] = React.useState([]);
   const [content, setContent] = React.useState("");
   const [connected, setConnected] = React.useState(false);
+  const [text, setText] = React.useState(""); //variable para probar listMessage
 
+  //Funciones para probar listMessage y button
   function addMessage(event) {
     event.preventDefault();
     setListMessage([
       ...listMessage,
-      { Author: "Carlos", text: "Hola", date: new Date() }
+      { Author: "Carlos", text: text, date: new Date() }
     ]);
+    setText("");
   }
+
+  function handleChange(event) {
+    setText(event.target.value);
+  }
+
+  //Acaba las funciones de prueba
 
   React.useEffect(() => {
     const server = new WebSocket(url);
@@ -144,6 +153,8 @@ function Home({ url }) {
             <form className="send-message">
               <input
                 type="text"
+                value={text}
+                onChange={handleChange}
                 id="js-input-user-message"
                 aria-label="Chat here"
                 className="input-text"
