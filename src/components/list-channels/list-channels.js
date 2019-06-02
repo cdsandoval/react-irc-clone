@@ -3,7 +3,43 @@ import React from "react";
 import { jsx } from "@emotion/core";
 import listchannelsCss from "./list-channels-css";
 
+
+function Channel(props) {
+  return (
+    <li data-name={props.name} class="channel irc">
+      {props.name}
+    </li>
+  );
+}
+
+function ButtonAddChannel(props) {
+  function handleChange(event) {
+    let channels = props.channels;
+    channels = channels.concat("General1");
+    props.newchannel(channels);
+  }
+
+  return (
+    <span
+      id="js-open-lb"
+      className="button -dark new-channel"
+      onClick={handleChange}
+    >
+      New channel
+    </span>
+  );
+}
+
+function CreatedChannels(props) {
+  return props.channels.map(channelName => {
+    return <Channel name={channelName} />;
+  });
+}
+
+
 function Listchannels() {
+  const [createdChannels, setCreatedChannels] = React.useState(["General"]);
+
   return (
     <section
       css={listchannelsCss}
@@ -26,28 +62,15 @@ function Listchannels() {
         <div id="js-open-menu" className="hamburguer" />
         <h3 className="heading-2 title">Channels</h3>
         <ul id="irc-channels">
-          <li data-name="general" class="channel irc">
-            general
-          </li>
-          <li data-name="general1" class="channel irc">
-            general1
-          </li>
+          <CreatedChannels channels={createdChannels} />
         </ul>
-        <span id="js-open-lb" className="button -dark new-channel">
-          New channel
-        </span>
+
+        <ButtonAddChannel
+          newchannel={setCreatedChannels}
+          channels={createdChannels}
+        />
       </div>
 
-      <footer className="footer">
-        <p>
-          With love by
-          <a href="#">@DeadLian</a>
-          <a href="#">@Christopher</a>
-          <a href="#">@Carlos</a>
-          <a href="#">@Diego</a>
-          <a href="#">@Ricardo</a>
-        </p>
-      </footer>
     </section>
   );
 }
