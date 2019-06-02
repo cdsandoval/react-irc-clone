@@ -77,6 +77,13 @@ function Home({ url }) {
       <Global styles={message} />
       <Global styles={separator} />
       <Global styles={home} />
+
+      <ul>
+        {listMessage.map(message => (
+          <li key={message.id}>{message.content}</li>
+        ))}
+      </ul>
+
       <div className="center">
         <div className="wrapper-app window main-grid">
           <header id="user-header" className="header center window-dots">
