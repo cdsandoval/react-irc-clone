@@ -2,7 +2,7 @@ import React from "react";
 import { Global } from "@emotion/core";
 import Tabs from "./components/tab/tabs";
 import SendMessage from "./components/sendMessage/sendMessage";
-import ListMessages from "./components/listMessages/listMessages";
+import Chat from "./components/chat/chat";
 
 import base from "./assets/css/base";
 import layout from "./assets/css/layout";
@@ -147,30 +147,7 @@ function Home({ url }) {
             </div>
           </section>
           <Tabs />
-          <section id="js-messages-list" className="chat padding24">
-            <ListMessages message={listMessage} />
-
-            <form className="send-message">
-              <input
-                type="text"
-                value={text}
-                onChange={handleChange}
-                id="js-input-user-message"
-                aria-label="Chat here"
-                className="input-text"
-                placeholder="Chat here..."
-                autoComplete="off"
-                autoFocus
-              />
-              <button
-                id="js-add-user-message"
-                className="button -dark submit"
-                onClick={addMessage}
-              >
-                Send
-              </button>
-            </form>
-          </section>
+          <Chat />
         </div>
         <div id="js-light-box" className="light-box">
           <form action="createChannel" className="window form-new-channel">
