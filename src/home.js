@@ -1,9 +1,8 @@
 import React from "react";
 import { Global } from "@emotion/core";
 import Tabs from "./components/tab/tabs";
-import SendMessage from "./components/sendMessage/sendMessage";
-import ListMessages from "./components/listMessages/listMessages";
 import ListChannels from "./components/list-channels/list-channels";
+import Chat from "./components/chat/chat";
 
 import base from "./assets/css/base";
 import layout from "./assets/css/layout";
@@ -17,18 +16,8 @@ import message from "./components/listMessages/helpers/testData.jsx"; // Test Da
 
 function Home({ url }) {
   const ws = React.useRef(null);
-
-  const [listMessage, setListMessage] = React.useState([]);
   const [content, setContent] = React.useState("");
   const [connected, setConnected] = React.useState(false);
-
-  function addMessage(event) {
-    event.preventDefault();
-    setListMessage([
-      ...listMessage,
-      { Author: "Carlos", text: "Hola", date: new Date() }
-    ]);
-  }
 
   React.useEffect(() => {
     const server = new WebSocket(url);
@@ -78,12 +67,6 @@ function Home({ url }) {
       <Global styles={separator} />
       <Global styles={home} />
 
-      <ul>
-        {listMessage.map(message => (
-          <li key={message.id}>{message.content}</li>
-        ))}
-      </ul>
-
       <div className="center">
         <div className="wrapper-app window main-grid">
           <header id="user-header" className="header center window-dots">
@@ -125,10 +108,8 @@ function Home({ url }) {
           </header>
           <ListChannels />
           <Tabs />
-          <section id="js-messages-list" className="chat padding24">
-            <ListMessages message={listMessage} />
-            <SendMessage />
-          </section>
+          <section id="js-messages-list" className="chat padding24" />
+          <Chat />
         </div>
         <div id="js-light-box" className="light-box">
           <form action="createChannel" className="window form-new-channel">
