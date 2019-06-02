@@ -120,25 +120,7 @@ function Home({ url }) {
           <Tabs />
           <section id="js-messages-list" className="chat padding24">
             <ListMessages message={listMessage} />
-
-            <form className="send-message">
-              <input
-                type="text"
-                id="js-input-user-message"
-                aria-label="Chat here"
-                className="input-text"
-                placeholder="Chat here..."
-                autoComplete="off"
-                autoFocus
-              />
-              <button
-                id="js-add-user-message"
-                className="button -dark submit"
-                onClick={addMessage}
-              >
-                Send
-              </button>
-            </form>
+            <SendMessage />
           </section>
         </div>
         <div id="js-light-box" className="light-box">

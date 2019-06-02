@@ -1,5 +1,6 @@
 const cssVar = {
   /* colors */
+
   black: "#34332F",
   red: "#F7D9D5",
   green: "#C4F1D8",
