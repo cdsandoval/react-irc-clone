@@ -1,5 +1,5 @@
-import { css } from '@emotion/core';
-import Listchannels from './list-channels';
+import { css } from "@emotion/core";
+import Listchannels from "./list-channels";
 
 const listchannelsCss = css`
   & {

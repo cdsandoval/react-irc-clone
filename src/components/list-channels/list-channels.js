@@ -1,11 +1,11 @@
 /** @jsx jsx */
-import React from 'react';
-import { jsx } from '@emotion/core';
-import listchannelsCss from './list-channels-css';
+import React from "react";
+import { jsx } from "@emotion/core";
+import listchannelsCss from "./list-channels-css";
 
 function Listchannels() {
   return (
-    <sections
+    <section
       css={listchannelsCss}
       id="channel-list"
       className="channels padding16 relative"
@@ -48,7 +48,7 @@ function Listchannels() {
           <a href="#">@Ricardo</a>
         </p>
       </footer>
-    </sections>
+    </section>
   );
 }
 
