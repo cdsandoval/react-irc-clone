@@ -3,6 +3,7 @@ import React from "react";
 import { jsx } from "@emotion/core";
 import listchannelsCss from "./list-channels-css";
 
+
 function Channel(props) {
   return (
     <li data-name={props.name} class="channel irc">
@@ -34,6 +35,7 @@ function CreatedChannels(props) {
     return <Channel name={channelName} />;
   });
 }
+
 
 function Listchannels() {
   const [createdChannels, setCreatedChannels] = React.useState(["General"]);
@@ -68,6 +70,7 @@ function Listchannels() {
           channels={createdChannels}
         />
       </div>
+
     </section>
   );
 }
